@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/imagens/viagem.png" type="image/x-icon">
+    <title>SublimeViagens</title>
+</head>
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <h1>SublimeViagens</h1>
+        </header>
+        <nav>
+            <div class="menu-mobile">
+                <button class="menu-toggle">&#9776;</button>
+            </div>
+            <ul class="menu">
+                <li><a href="#index">Home</a></li>
+                <li><a href="#sobre-nos">Sobre Nós</a></li>
+                <li><a href="#roteiros">Viagens</a></li>
+                <li class="dropdown">
+                    <a href="#">Pacotes</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#pacote-nacional">Nacionais</a></li>
+                        <li><a href="#pacote-internacional">Internacionais</a></li>
+                        <li><a href="#pacote-cruzeiro">Cruzeiros</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="sobre-nos">
+            <h2 class="h2">Sobre Nós</h2>
+            <p class="p"><br>
+                A Sublime Viagens é especialista em criar experiências exclusivas e sob medida para viajantes exigentes. Cada roteiro é meticulosamente planejado para refletir os desejos, preferências e expectativas de nossos clientes, transformando cada viagem em uma jornada única e inesquecível.
+            </p>
+            <p class="p">
+                Nossa equipe trabalha de forma personalizada, garantindo que cada detalhe – da hospedagem aos passeios – seja perfeitamente alinhado com o seu estilo e propósito de viagem. Seja uma lua de mel romântica, uma expedição familiar cheia de aventuras ou uma escapada privativa de luxo, cuidamos de tudo para que você apenas desfrute o melhor que o mundo tem a oferecer.
+            </p><br>
+            <p class="p"><b>✨ Sublime Viagens </b>– Onde cada viagem é uma experiência única e memorável.</p>
+            <br>
+        </section>
+        <section id="roteiros">
+            <h2 class="h2">Roteiros Atuais:</h2><br>
+            <div class="cards">
+                <div class="card">
+                    <img src="/imagens/ESTADOSUNIDOS.jpg" alt="Copa do Mundo 2026">
+                    <h2>Copa do Mundo 2026</h2>
+                    <p class="p">Rumo ao Hexa 2026: Viva a emoção do futebol em grande estilo!</p>
+                </div>
+                <div class="card">
+                    <img src="/imagens/noronha.jpg" alt="Fernando de Noronha">
+                    <h2>Fernando de Noronha</h2>
+                    <p class="p">Descubra o Paraíso em Fernando de Noronha! Você está convidado a uma experiência inesquecível em uma das ilhas mais deslumbrantes do Brasil.</p>
+                </div>
+                <div class="card">
+                    <img src="/imagens/paris.jpeg" alt="Paris">
+                    <h2>Paris</h2>
+                    <p class="p">Descubra a Cidade Luz com a Sublime Viagens. Paris, a capital da França, é um dos destinos mais badalados e românticos do mundo. Se você sonha em conhecer a Torre Eiffel, o museu do Louvre, o Arco do Triunfo e a Catedral de Notre-Dame, este é o momento perfeito!</p>
+                </div>
+                <div class="card">
+                    <img src="/imagens/dubai.jpeg" alt="Dubai">
+                    <h2>Dubai</h2>
+                    <p class="p">Dubai, a jóia do Oriente Médio! Descubra o luxo de Dubai com a Sublime Viagens! Você está pronto para uma experiência de viagem como nenhuma outra?</p>
+                </div>
+            </div><br>
+        </section>
+        <section id="contato">
+            <section class="contatos-formulario">
+    
+                <!-- 🔹 Contatos -->
+                <div class="contatos">
+                    <h2 class="h2">Contatos</h2>
+                    <p>Você pode nos contactar através dos seguintes meios:</p>
+                    <ul>
+                        <li>E-mail: contato@sublimeviagens.com</li>
+                        <li>Telefone: (99) 1234-5678</li>
+                        <li>Endereço: Rua Petrônio Portela, 551, Imperatriz - MA, Brasil</li>
+                    </ul>
+                </div>
+            
+                <!-- 🔹 Formulário -->
+                <div class="formulario">
+                    <h2 class="h2">Para maiores informações, preencha o formulário abaixo:</h2>
+                    <form action="enviar.php" method="POST">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+            
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+            
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+            
+                        <label for="destino">Destino de Interesse:</label>
+                        <select id="destino" name="destino" required onchange="mostrarCampoOutro()">
+                            <option value="">Selecione um destino</option>
+                            <option value="copa">Copa do Mundo 2026</option>
+                            <option value="noronha">Fernando de Noronha</option>
+                            <option value="paris">Paris</option>
+                            <option value="dubai">Dubai</option>
+                            <option value="outros">Outros</option>
+                        </select>
+            
+                        <div id="outroDestino" style="display: none;">
+                            <label for="outro">Informe o destino desejado:</label>
+                            <input type="text" id="outro" name="outro">
+                        </div>
+            
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+           
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const menuToggle = document.querySelector(".menu-toggle");
+                    const menu = document.querySelector(".menu");
+            
+                    menuToggle.addEventListener("click", function () {
+                        menu.classList.toggle("show"); // Exibe ou oculta o menu
+                    });
+                });
+            </script>
+ <img src="/imagens/logo.png" alt="logo">
+ 
+ <p class="p2" style="color: white;">Onde cada viagem é uma experiência única e memorável.</p><br
+
+ <div class="social-icons">
+    <a href="https://www.instagram.com/seu_perfil" target="_blank">
+        <img src="/imagens/insta.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/seu_perfil" target="_blank">
+        <img src="/imagens/face.png" alt="Facebook">
+    </a>
+</div>
+
+        </main>
+    </section>
+    </section>
+    </section>
+        <footer>
+            <p>&copy; 2025 Sublime Viagens. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
