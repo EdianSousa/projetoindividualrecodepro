@@ -1,0 +1,286 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+.h2{
+    font-size: 30px;
+}
+.p2{
+    font-size: 20px;
+}
+html {
+    scroll-behavior: smooth; /* Ativa a rolagem suave */
+}
+
+/* Estilização do container principal */
+.container {
+    display: grid;
+    grid-template-areas:
+        "h"
+        "n"
+        "m"
+        "f";
+    gap: 10px;
+    max-width: 1200px; /* Mesma largura do footer */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 15px;
+}
+
+/* Estilização do cabeçalho */
+.cabecalho {
+    grid-area: h;
+    background-image: url('/imagens/capa.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilização do menu de navegação */
+nav {
+    grid-area: n;
+    background-color: sienna;
+    border-radius: 5px;
+}
+.p{
+    text-align: justify;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+/* Ícone do menu hambúrguer */
+.menu-mobile {
+    display: none;
+    text-align: right;
+    padding: 10px;
+    background-color: sienna;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu > li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: sienna;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content > li > a {
+    padding: 12px 16px;
+}
+
+.dropdown-content > li > a:hover {
+    background-color: darksalmon;
+}
+main {
+    grid-area: m;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card > h2 {
+    margin: 10px 0;
+}
+
+.card > p {
+    padding: 0 10px 10px;
+}
+ul li {
+    list-style: none;
+}
+ul li a {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor padrão */
+}
+/* 🔹 Definir imagem de fundo na seção de contatos e formulário */
+.contatos-formulario {
+    background-image: url('/imagens/banner2.png'); /* Caminho correto da imagem */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
+    width: 100%;
+    padding: 60px 0; /* Espaçamento vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🔹 Ajustando a div de contatos */
+.contatos {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 30px; /* Espaçamento antes do formulário */
+}
+
+/* 🔹 Estilização do formulário */
+.formulario {
+    max-width: 500px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 🔹 Melhorando os campos */
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+}
+
+/* 🔹 Botão estilizado */
+.formulario button {
+    width: 100%;
+    padding: 12px;
+    background: sienna;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background: darkred;
+}
+
+#outroDestino {
+    margin-top: 10px;
+}
+
+footer {
+    width: 100%;
+    max-width: 1200px; /* Mesma largura do container principal */
+    margin: 0 auto; /* Centraliza o footer */
+    padding: 20px;
+    background-color: sienna;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: sienna;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .menu li {
+        padding: 10px 0;
+    }
+    .menu > li > a {
+        width: 100%;
+    }
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center; /* Centraliza os ícones */
+        align-items: center; /* Alinha os ícones verticalmente */
+        gap: 20px; /* Espaçamento entre os ícones */
+        margin-top: 20px; /* Espaçamento superior */
+    }
+    
+    /* Estilização para os ícones */
+    .social-icons a img {
+        width: 40px;  /* Tamanho dos ícones */
+        height: auto;
+        transition: transform 0.3s ease-in-out; /* Efeito de transição para aumento */
+    }
+    
+    /* Efeito ao passar o mouse sobre os ícones */
+    .social-icons a:hover img {
+        transform: scale(1.2); /* Aumenta o tamanho do ícone */
+    }
+    }
